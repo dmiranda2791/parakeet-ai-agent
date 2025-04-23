@@ -5,7 +5,7 @@ import { PIIDetector } from '@/lib/pii-detector';
 
 export const maxDuration = 30;
 
-export function errorHandler(error: unknown) {
+function errorHandler(error: unknown) {
   if (error == null) {
     return 'unknown error';
   }
