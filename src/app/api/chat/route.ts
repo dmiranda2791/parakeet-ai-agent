@@ -5,6 +5,22 @@ import { PIIDetector } from '@/lib/pii-detector';
 
 export const maxDuration = 30;
 
+export function errorHandler(error: unknown) {
+  if (error == null) {
+    return 'unknown error';
+  }
+
+  if (typeof error === 'string') {
+    return error;
+  }
+
+  if (error instanceof Error) {
+    return error.message;
+  }
+
+  return JSON.stringify(error);
+}
+
 const piiDetector = new PIIDetector();
 
 export async function POST(req: Request) {
@@ -59,5 +75,7 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toDataStreamResponse(
+    { getErrorMessage: errorHandler }
+  );
 }
