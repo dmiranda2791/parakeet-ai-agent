@@ -3,6 +3,9 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Loader2, Send, Upload, X } from "lucide-react";
 import { useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeSanitize from "rehype-sanitize";
 
 export function Chat() {
   const [files, setFiles] = useState<FileList | undefined>(undefined);
@@ -44,22 +47,17 @@ export function Chat() {
                     return (
                       <div
                         key={`${message.id}-${i}`}
-                        className="whitespace-pre-wrap"
+                        className="prose prose-slate prose-sm max-w-none [&>ul]:list-disc [&>ul]:pl-4 [&>ul]:space-y-2 [&>p]:mb-4 [&>ul]:my-4"
                       >
-                        {part.text}
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeSanitize]}
+                        >
+                          {part.text.replace(/\\n/g, "\n")}
+                        </ReactMarkdown>
                       </div>
                     );
                   case "tool-invocation":
-                    if (part.toolInvocation.state === "result") {
-                      return (
-                        <div
-                          key={`${message.id}-${i}`}
-                          className="whitespace-pre-wrap"
-                        >
-                          {part.toolInvocation.result}
-                        </div>
-                      );
-                    }
                     return null;
                 }
               })}

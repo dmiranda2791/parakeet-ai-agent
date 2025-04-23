@@ -42,6 +42,7 @@ export async function POST(req: Request) {
       },
       ...messages,
     ],
+    maxSteps: 5,
     tools: {
       detectPII: tool({
         description: 'Scan text content for Personally Identifiable Information (PII)',
@@ -57,15 +58,7 @@ export async function POST(req: Request) {
 
             const detections = await piiDetector.detectPII(textContent);
 
-            if (detections.length === 0) {
-              return 'No PII detected in the document.';
-            }
-
-            const summary = detections.map(d =>
-              `- ${d.type}: ${d.value}`
-            ).join('\n');
-
-            return `I found the following PII in the document:\n${summary}`;
+            return { detections };
           } catch (error) {
             console.error('Error processing text:', error);
             return 'Sorry, I encountered an error while processing the text. Please make sure you uploaded a valid PDF file.';
