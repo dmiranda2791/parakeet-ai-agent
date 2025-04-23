@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Debug Docker Container",
+      "remoteRoot": "/app",
+      "localRoot": "${workspaceFolder}",
+      "port": 9230,
+      "restart": true,
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": ["${workspaceFolder}/.next/**/*.js"],
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    }
+  ]
+}

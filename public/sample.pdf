@@ -1,0 +1,77 @@
+%PDF-1.7
+1 0 obj
+<</Type /Catalog
+/Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages
+/Kids [3 0 R]
+/Count 1>>
+endobj
+3 0 obj
+<</Type /Page
+/Parent 2 0 R
+/Resources 4 0 R
+/MediaBox [0 0 612 792]
+/Contents 5 0 R>>
+endobj
+4 0 obj
+<</Font <</F1 6 0 R>>>>
+endobj
+5 0 obj
+<</Length 1000>>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(Parakeet Financial Services - Sample Document) Tj
+0 -30 Td
+(Client Information:) Tj
+0 -30 Td
+(Name: John Smith) Tj
+0 -30 Td
+(Email: john.smith@example.com) Tj
+0 -30 Td
+(Phone: (555) 123-4567) Tj
+0 -30 Td
+(SSN: 123-45-6789) Tj
+0 -30 Td
+(Credit Card: 4111 1111 1111 1111) Tj
+0 -30 Td
+(Address: 123 Main St, Anytown, CA 90210) Tj
+0 -30 Td
+(Account Number: ACC-78901234) Tj
+0 -30 Td
+(Date of Birth: 01/15/1985) Tj
+0 -30 Td
+(Driver's License: DL12345678) Tj
+0 -30 Td
+(Passport: P12345678) Tj
+0 -30 Td
+(Medical Record: MR-98765432) Tj
+0 -30 Td
+(Insurance Policy: INS-45678901) Tj
+ET
+endstream
+endobj
+6 0 obj
+<</Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding>>
+endobj
+xref
+0 7
+0000000000 65535 f
+0000000009 00000 n
+0000000074 00000 n
+0000000123 00000 n
+0000000212 00000 n
+0000000237 00000 n
+0000000337 00000 n
+trailer
+<</Size 7
+/Root 1 0 R>>
+startxref
+337
+%%EOF 
